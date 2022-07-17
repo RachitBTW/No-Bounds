@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAim : MonoBehaviour
 {
-    public Transform blockArm;
+   
 
     private void FixedUpdate()
     {
@@ -18,17 +18,9 @@ public class PlayerAim : MonoBehaviour
         if (rotationZ < -90 || rotationZ > 90)
         {
             transform.localRotation = Quaternion.Euler(180, 0f, -rotationZ);
-            blockArm.localRotation = Quaternion.Lerp(blockArm.rotation, Quaternion.Euler(new Vector3(0f, 180, 0f)), Time.deltaTime * 4f);
-            /*blockArm.localRotation = Quaternion.Euler(0f, 180, 0f);*/
+           
         }
-        else
-        {
-            //blockArm.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            blockArm.localRotation = Quaternion.Lerp(blockArm.rotation, Quaternion.Euler(new Vector3(0f, 0f, 0f)), Time.deltaTime * 4f);
-
-        }
-
-
+    
     }
 
 }
